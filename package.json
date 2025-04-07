@@ -1,0 +1,31 @@
+{
+  "name": "makiobra_api",
+  "version": "1.0.0",
+  "description": "This is the application interface for MakiObra, a job social networking platform for TESDA graduates to search jobs easily and efficiently. ",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonaslacandola0617/makiobra-api.git"
+  },
+  "author": "Jonas Lacandola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonaslacandola0617/makiobra-api/issues"
+  },
+  "homepage": "https://github.com/jonaslacandola0617/makiobra-api#readme",
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.5.0"
+  }
+}
