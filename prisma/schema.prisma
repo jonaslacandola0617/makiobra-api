@@ -1,0 +1,61 @@
+datasource db {
+    provider = "postgresql"
+    url = env("DATABASE_URL")
+}
+
+model User {
+    id String @id @default(cuid()) @db.Uuid
+    fullName String @db.VarChar(60)
+    email String @unique @db.VarChar(100) 
+    passwordHash String
+    profilePictureUrl String? 
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    worker Worker? 
+    employer Employer?
+    
+}
+
+model Worker {
+    id String @id @default(cuid()) @db.Uuid
+
+    user User @relation(fields: [userId], references: [id])
+    skills Skill[]
+
+    userId String @unique @db.Uuid
+}
+
+model Employer {
+    id String @id @default(cuid()) @db.Uuid
+
+    user User @relation(fields: [userId], references: [id])
+    jobPosts Job[]
+
+    userId String @unique @db.Uuid
+}
+
+model Skill {
+    id String @id @default(cuid()) @db.Uuid
+    skill String @db.VarChar(60)
+
+    workers Worker[]
+}
+
+enum Status {
+    open
+    closed
+}
+
+model Job {
+    id String @id @default(cuid()) @db.Uuid
+    title String @db.VarChar(100)
+    description String
+    status Status
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    employer Employer @relation(fields: [employerId], references: [id], onDelete: Cascade)
+
+    employerId String @db.Uuid
+}
