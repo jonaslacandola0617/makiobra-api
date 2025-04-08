@@ -1,10 +1,14 @@
-import express from "express";
-import morgan from "morgan"
+import express from 'express';
+import morgan from 'morgan';
 
-const app = express()
+import jobRouter from './routes/jobRouter.js';
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(morgan("dev"))
+const app = express();
 
-export default app
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+
+app.use('/jobs', jobRouter);
+
+export default app;

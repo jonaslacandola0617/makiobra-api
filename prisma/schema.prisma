@@ -3,6 +3,10 @@ datasource db {
     url = env("DATABASE_URL")
 }
 
+generator cleint {
+    provider = "prisma-client-js"
+}
+
 model User {
     id String @id @default(cuid()) @db.Uuid
     fullName String @db.VarChar(60)
