@@ -1,6 +1,6 @@
 const prisma = require('../prisma');
 
-class JobService {
+class JobServices {
   async findAll() {
     const result = await prisma.job.findMany();
 
@@ -52,4 +52,4 @@ class JobService {
   }
 }
 
-module.exports = new JobService();
+module.exports = new JobServices();

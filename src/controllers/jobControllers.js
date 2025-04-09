@@ -1,8 +1,8 @@
-const JobService = require('../services/jobService');
+const JobServices = require('../services/jobServices');
 
-class JobController {
+class JobControllers {
   async findAll(req, res) {
-    const result = await JobService.findAll();
+    const result = await JobServices.findAll();
 
     res.status(200).json({
       status: 'success',
@@ -15,7 +15,7 @@ class JobController {
   async findById(req, res) {
     const { id } = req.params;
 
-    const result = await JobService.findById(id);
+    const result = await JobServices.findById(id);
 
     res.status(200).json({
       status: 'success',
@@ -28,7 +28,7 @@ class JobController {
   async create(req, res) {
     const job = req.body;
 
-    const result = await JobService.create(job);
+    const result = await JobServices.create(job);
 
     res.status(201).json({
       status: 'success',
@@ -42,7 +42,7 @@ class JobController {
     const { id } = req.params;
     const job = req.body;
 
-    const result = await JobService.update(id, job);
+    const result = await JobServices.update(id, job);
 
     res.status(200).json({
       status: 'success',
@@ -55,7 +55,7 @@ class JobController {
   async delete(req, res) {
     const { id } = req.params;
 
-    const result = await JobService.delete(id);
+    const result = await JobServices.delete(id);
 
     res.status(204).json({
       status: 'success',
@@ -66,4 +66,4 @@ class JobController {
   }
 }
 
-module.exports = new JobController();
+module.exports = new JobControllers();

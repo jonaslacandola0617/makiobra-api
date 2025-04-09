@@ -1,15 +1,15 @@
 const { Router } = require('express');
 
-const JobController = require('../controllers/jobController');
+const JobControllers = require('../controllers/jobControllers');
 
 const router = Router();
 
-router.route('/').get(JobController.findAll).post(JobController.create);
+router.route('/').get(JobControllers.findAll).post(JobControllers.create);
 
 router
   .route('/:id')
-  .get(JobController.findById)
-  .put(JobController.update)
-  .delete(JobController.delete);
+  .get(JobControllers.findById)
+  .put(JobControllers.update)
+  .delete(JobControllers.delete);
 
 module.exports = router;

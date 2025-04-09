@@ -9,6 +9,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-app.use('/jobs', jobRouter);
+app.use('/v1/jobs', jobRouter);
 
 module.exports = app;
