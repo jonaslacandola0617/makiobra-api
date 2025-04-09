@@ -12,8 +12,10 @@
     "no-param-reassign": "off",
     "no-return-await": "off",
     "no-underscore-dangle": "off",
+    "rest-spread-spacing": "warn",
     "class-methods-use-this": "off",
     "prefer-destructuring": ["error", { "object": true, "array": false }],
-    "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }]
+    "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }],
+    "node/no-unsupported-features/es-syntax": "off"
   }
 }

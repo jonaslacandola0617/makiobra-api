@@ -1,7 +1,7 @@
-import express from 'express';
-import morgan from 'morgan';
+const express = require('express');
+const morgan = require('morgan');
 
-import jobRouter from './routes/jobRouter.js';
+const jobRouter = require('./routes/jobRoutes');
 
 const app = express();
 
@@ -11,4 +11,4 @@ app.use(morgan('dev'));
 
 app.use('/jobs', jobRouter);
 
-export default app;
+module.exports = app;

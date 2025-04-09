@@ -1,9 +1,9 @@
-import prisma from '../prisma.js';
+const prisma = require('../prisma');
 
 class JobService {
   async findAll() {
     const result = await prisma.job.findMany();
-    console.log('burat');
+
     return result;
   }
 
@@ -52,4 +52,4 @@ class JobService {
   }
 }
 
-export default new JobService();
+module.exports = new JobService();

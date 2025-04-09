@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const { Router } = require('express');
 
-import JobController from '../controllers/jobController';
+const JobController = require('../controllers/jobController');
 
 const router = Router();
 
@@ -12,4 +12,4 @@ router
   .put(JobController.update)
   .delete(JobController.delete);
 
-export default router;
+module.exports = router;

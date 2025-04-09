@@ -1,4 +1,4 @@
-import JobService from '../services/jobService';
+const JobService = require('../services/jobService');
 
 class JobController {
   async findAll(req, res) {
@@ -13,7 +13,7 @@ class JobController {
   }
 
   async findById(req, res) {
-    const id = req.params.id;
+    const { id } = req.params;
 
     const result = await JobService.findById(id);
 
@@ -39,7 +39,7 @@ class JobController {
   }
 
   async update(req, res) {
-    const id = req.params.id;
+    const { id } = req.params;
     const job = req.body;
 
     const result = await JobService.update(id, job);
@@ -53,7 +53,7 @@ class JobController {
   }
 
   async delete(req, res) {
-    const id = req.params.id;
+    const { id } = req.params;
 
     const result = await JobService.delete(id);
 
@@ -66,4 +66,4 @@ class JobController {
   }
 }
 
-export default new JobController();
+module.exports = new JobController();

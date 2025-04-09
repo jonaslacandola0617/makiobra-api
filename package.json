@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is the application interface for MakiObra, a job social networking platform for TESDA graduates to search jobs easily and efficiently. ",
   "main": "src/server.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon src/server.js"
   },
@@ -21,11 +20,20 @@
     "@prisma/client": "^6.5.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "morgan": "^1.10.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
     "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
     "prisma": "^6.5.0"
   }
 }
