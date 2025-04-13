@@ -1,0 +1,46 @@
+{
+  "name": "makiobra-api",
+  "version": "1.0.0",
+  "description": "Makiobra API is a backend service powering a job-based social networking platform tailored for TESDA-certified workers and employers. It provides secure, scalable endpoints for managing users, job listings, applications, messaging, and verification features.",
+  "main": "src/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "nodemon dist/server.js",
+    "dev": "nodemon src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonaslacandola0617/makiobra-api.git"
+  },
+  "author": "Jonas Lacandola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonaslacandola0617/makiobra-api/issues"
+  },
+  "homepage": "https://github.com/jonaslacandola0617/makiobra-api#readme",
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
+    "prisma": "^6.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
