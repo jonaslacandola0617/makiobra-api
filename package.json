@@ -9,6 +9,9 @@
     "start": "nodemon dist/server.js",
     "dev": "nodemon src/server.ts"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jonaslacandola0617/makiobra-api.git"

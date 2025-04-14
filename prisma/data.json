@@ -1,0 +1,170 @@
+[
+  {
+    "jobTitle": "Web Developer",
+    "description": "A web developer is a professional who creates and maintains websites and web applications by writing code.",
+    "salary": 30000,
+    "city": "Angeles",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Graphic Designer",
+    "description": "A graphic designer creates visual content to communicate messages through typography, imagery, color, and layout.",
+    "salary": 25000,
+    "city": "San Fernando",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Data Analyst",
+    "description": "A data analyst collects, processes, and performs statistical analyses on large datasets to discover useful information.",
+    "salary": 35000,
+    "city": "Mabalacat",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "IT Support Specialist",
+    "description": "An IT support specialist assists users with technical issues and ensures computer systems run smoothly.",
+    "salary": 28000,
+    "city": "Angeles",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Digital Marketing Specialist",
+    "description": "A digital marketing specialist develops and implements online marketing strategies to promote products or services.",
+    "salary": 32000,
+    "city": "Clark",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Content Writer",
+    "description": "A content writer produces engaging written content for websites, blogs, and social media platforms.",
+    "salary": 22000,
+    "city": "Lubao",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Mobile App Developer",
+    "description": "A mobile app developer designs and builds applications for mobile devices, typically using iOS or Android platforms.",
+    "salary": 40000,
+    "city": "Mexico",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Network Administrator",
+    "description": "A network administrator manages and maintains computer networks and ensures their optimal performance.",
+    "salary": 35000,
+    "city": "San Fernando",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "UI/UX Designer",
+    "description": "A UI/UX designer focuses on the look and feel of a website or app, ensuring a smooth user experience.",
+    "salary": 30000,
+    "city": "Angeles",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Social Media Manager",
+    "description": "A social media manager creates and manages content across social media platforms to engage an audience and grow followers.",
+    "salary": 27000,
+    "city": "Guagua",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Project Manager",
+    "description": "A project manager plans, executes, and closes projects while managing teams, timelines, and resources.",
+    "salary": 45000,
+    "city": "San Fernando",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Technical Writer",
+    "description": "A technical writer creates manuals, guides, and documentation that explain complex technical information clearly.",
+    "salary": 29000,
+    "city": "Angeles",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "SEO Specialist",
+    "description": "An SEO specialist improves website visibility in search engine results by optimizing content and structure.",
+    "salary": 30000,
+    "city": "Mabalacat",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Backend Developer",
+    "description": "A backend developer builds and maintains the server side of web applications and integrates databases.",
+    "salary": 38000,
+    "city": "Clark",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "System Administrator",
+    "description": "A system administrator is responsible for installing, supporting, and maintaining servers and other computer systems.",
+    "salary": 34000,
+    "city": "Floridablanca",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "DevOps Engineer",
+    "description": "A DevOps engineer works with software developers and IT staff to manage code releases and improve deployment processes.",
+    "salary": 48000,
+    "city": "Angeles",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Quality Assurance Tester",
+    "description": "A QA tester ensures that software products meet quality standards and function as intended before release.",
+    "salary": 31000,
+    "city": "San Simon",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Front-End Developer",
+    "description": "A front-end developer builds the user interface and client-side features of web applications.",
+    "salary": 36000,
+    "city": "San Fernando",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Business Analyst",
+    "description": "A business analyst analyzes business needs and provides data-driven recommendations for improvement.",
+    "salary": 40000,
+    "city": "Angeles",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Database Administrator",
+    "description": "A database administrator manages and maintains databases to ensure data availability, security, and performance.",
+    "salary": 39000,
+    "city": "Apalit",
+    "province": "Pampanga",
+    "country": "Philippines"
+  },
+  {
+    "jobTitle": "Cybersecurity Analyst",
+    "description": "A cybersecurity analyst protects an organization’s systems and networks from cyber threats and attacks.",
+    "salary": 42000,
+    "city": "Clark",
+    "province": "Pampanga",
+    "country": "Philippines"
+  }
+]
