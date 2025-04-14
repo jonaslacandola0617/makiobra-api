@@ -3,7 +3,40 @@ import prisma from '../prisma';
 import { Job } from '@prisma/client';
 
 export async function getJobs(req: Request, res: Response) {
-  const jobs: Job[] = await prisma.job.findMany();
+  /*
+      sort: { asc: salary }
+      fields: "jobTitle,salary,description"
+      page: 5
+      limit: 10
+  */
+  let queryObj: Object = {};
+
+  //  SORT
+  if (req.query.sort) {
+    const { sort } = req.query;
+    const entries = [[Object.values(sort)[0], Object.keys(sort)[0]]];
+
+    queryObj = { ...queryObj, orderBy: Object.fromEntries(entries) };
+  }
+
+  //  SELECT FIELDS
+  if (req.query.fields) {
+    const { fields } = req.query;
+
+    if (typeof fields === 'string') {
+      const selectedFields = fields
+        .split(',')
+        .map((field) => [field.trim(), true]);
+
+      queryObj = { ...queryObj, select: Object.fromEntries(selectedFields) };
+    }
+  }
+
+  //  PAGINATE AND LIMIT
+
+  console.log(queryObj);
+
+  const jobs = await prisma.job.findMany(queryObj);
 
   res.status(200).json({
     status: 'success',
