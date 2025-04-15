@@ -30,7 +30,7 @@ export async function getJobs(req: Request, res: Response) {
       if (Number.isNaN(Number(value)))
         filter[field] = { contains: value, mode: 'insensitive' };
       else (filter as Record<string, any>)[field] = Number(value);
-    } else if (typeof value === 'object' && value !== null) {
+    } else if (typeof value === 'object') {
       Object.keys(value).forEach((key) => {
         const nestedValue = (value as ParsedQs)[key];
         (value as Record<string, any>)[key] = Number(nestedValue);
@@ -62,6 +62,14 @@ export async function getJobs(req: Request, res: Response) {
   }
 
   //  PAGINATE AND LIMIT
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+
+  query = {
+    ...query,
+    skip: (page - 1) * limit,
+    take: limit,
+  };
 
   const jobs = await prisma.job.findMany(Object(query));
 

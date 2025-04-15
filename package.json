@@ -25,10 +25,12 @@
   "dependencies": {
     "@prisma/client": "^6.6.0",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.9",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^10.1.1",
