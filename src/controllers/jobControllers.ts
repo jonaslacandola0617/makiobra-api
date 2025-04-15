@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
-import prisma from '../prisma';
+import { ParsedQs } from 'qs';
 import { Job } from '@prisma/client';
+
+import prisma from '../prisma';
 
 export async function getJobs(req: Request, res: Response) {
   /*
@@ -8,15 +10,42 @@ export async function getJobs(req: Request, res: Response) {
       fields: "jobTitle,salary,description"
       page: 5
       limit: 10
+      filter
   */
-  let queryObj: Object = {};
+  let query: Record<string, any> = {};
+
+  // FILTER
+  const filter = req.query;
+  const excludedQueries = ['sort', 'page', 'limit', 'fields'];
+
+  excludedQueries.forEach((el) => delete filter[el]);
+
+  Object.keys(filter).forEach((field) => {
+    const value = filter[field];
+
+    // CHECK IF THE VALUE IS A STRING AND IS NOT A NUMBER (NAN)
+    if (typeof value === 'string') {
+      // IF IT'S A STRING, MUTATE TO AN ACCEPTABLE PRISMA QUERY
+      // THIS WILL BE MOSTLY USED FOR SEARCH FUNCTIONS
+      if (Number.isNaN(Number(value)))
+        filter[field] = { contains: value, mode: 'insensitive' };
+      else (filter as Record<string, any>)[field] = Number(value);
+    } else if (typeof value === 'object' && value !== null) {
+      Object.keys(value).forEach((key) => {
+        const nestedValue = (value as ParsedQs)[key];
+        (value as Record<string, any>)[key] = Number(nestedValue);
+      });
+    }
+  });
+
+  query = { ...query, where: filter };
 
   //  SORT
   if (req.query.sort) {
     const { sort } = req.query;
     const entries = [[Object.values(sort)[0], Object.keys(sort)[0]]];
 
-    queryObj = { ...queryObj, orderBy: Object.fromEntries(entries) };
+    query = { ...query, orderBy: Object.fromEntries(entries) };
   }
 
   //  SELECT FIELDS
@@ -28,15 +57,13 @@ export async function getJobs(req: Request, res: Response) {
         .split(',')
         .map((field) => [field.trim(), true]);
 
-      queryObj = { ...queryObj, select: Object.fromEntries(selectedFields) };
+      query = { ...query, select: Object.fromEntries(selectedFields) };
     }
   }
 
   //  PAGINATE AND LIMIT
 
-  console.log(queryObj);
-
-  const jobs = await prisma.job.findMany(queryObj);
+  const jobs = await prisma.job.findMany(Object(query));
 
   res.status(200).json({
     status: 'success',
