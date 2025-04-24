@@ -2,16 +2,16 @@ import { ParsedQs } from 'qs';
 
 class RequestFilters {
   query: Record<string, any>;
-  requestQuery: ParsedQs;
+  request: ParsedQs;
 
-  constructor(query: Record<string, any>, requestQuery: ParsedQs) {
+  constructor(query: Record<string, any>, request: ParsedQs) {
     this.query = query;
-    this.requestQuery = requestQuery;
+    this.request = request;
   }
 
   filter() {
     // FILTER
-    const filter = { ...this.requestQuery };
+    const filter = { ...this.request };
     const excludedQueries = ['sort', 'page', 'limit', 'fields'];
 
     excludedQueries.forEach((el) => delete filter[el]);
@@ -42,8 +42,8 @@ class RequestFilters {
 
   sort() {
     //  SORT
-    if (this.requestQuery.sort) {
-      const { sort } = this.requestQuery;
+    if (this.request.sort) {
+      const { sort } = this.request;
       const entries = [[Object.values(sort)[0], Object.keys(sort)[0]]];
 
       this.query = { ...this.query, orderBy: Object.fromEntries(entries) };
@@ -52,10 +52,10 @@ class RequestFilters {
     return this;
   }
 
-  limitFields() {
+  fields() {
     //  SELECT FIELDS
-    if (this.requestQuery.fields) {
-      const { fields } = this.requestQuery;
+    if (this.request.fields) {
+      const { fields } = this.request;
 
       if (typeof fields === 'string') {
         const selectedFields = fields
@@ -74,8 +74,8 @@ class RequestFilters {
 
   paginate() {
     //  PAGINATE AND LIMIT
-    const page = Number(this.requestQuery.page) || 1;
-    const limit = Number(this.requestQuery.limit) || 10;
+    const page = Number(this.request.page) || 1;
+    const limit = Number(this.request.limit) || 10;
 
     this.query = {
       ...this.query,

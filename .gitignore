@@ -13,6 +13,9 @@ logs
 *.seed
 *.pid.lock
 
+# Environment variables
+.env
+
 # Optional npm cache directory
 .npm
 

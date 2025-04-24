@@ -8,10 +8,8 @@ export async function getJobs(req: Request, res: Response) {
   const { query } = new RequestFilters({}, req.query)
     .filter()
     .sort()
-    .limitFields()
+    .fields()
     .paginate();
-
-  console.log(query);
 
   const jobs = await prisma.job.findMany(Object(query));
 
